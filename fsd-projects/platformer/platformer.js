@@ -32,14 +32,14 @@ $(function () {
 
     // TODO 2 - Create Platforms
 
-    createPlatform(900, 400, 100, 50, "pink")
-    createPlatform(750, 500, 100, 50, "pink")
-    createPlatform(600, 600, 100, 50, "pink")
-    createPlatform(400, 700, 100, 50, "pink")
-    createPlatform(1000, 450, 20, 300, "pink")
-    createPlatform(1200, 450, 20, 300, "pink")
-    createPlatform(1100, 520, 100, 20, "pink")
-    createPlatform(1020, 650, 100, 20, "pink")
+    createPlatform(900, 400, 100, 50, "black")
+    createPlatform(750, 500, 100, 50, "black")
+    createPlatform(600, 600, 100, 50, "black")
+    createPlatform(400, 700, 100, 50, "black")
+    createPlatform(1000, 450, 20, 300, "black")
+    createPlatform(1200, 450, 20, 300, "black")
+    createPlatform(1100, 520, 100, 20, "black")
+    createPlatform(1020, 650, 100, 20, "black")
 
 
 
