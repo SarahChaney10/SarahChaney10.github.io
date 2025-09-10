@@ -12,7 +12,7 @@ body {
 
 /* navigation menu */
 nav {
-    background: oklch(56.684% 0.22639 348.108);
+    background: rgb(204, 25, 141);
     margin: 0 auto;
     display: flex;
     padding: 10px;
