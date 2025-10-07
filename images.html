@@ -193,18 +193,20 @@
         
 <!-- Add this in your content section -->
 <div class="mt-8">
-  <h4 class="text-2xl font-bold mb-4">My Favorites</h4>
-    <div class="flex flex-wrap gap-4">
-         <img src="assets/IMG_5328.JPG" alt="Photo 1" class="gallery-rounded clickable-img">
-         <img src="assets/DSC00104.jpg" alt="Photo 2" class="gallery-rounded clickable-img">
-         <img src="assets/DSC00115.jpg" alt="Photo 3" class="gallery-rounded clickable-img">
-         <img src="assets/DSC00195.jpg" alt="Photo 5" class="gallery-rounded clickable-img">
-         <img src="assets/DSC00510 (1).jpg" alt="Photo 6" class="gallery-rounded clickable-img">
-         <img src="assets/IMG_5322.JPG" alt="Photo 7" class="gallery-rounded clickable-img">
-         <img src="assets/IMG_5320.JPG" alt="Photo 8" class="gallery-rounded clickable-img">
+        <div style="text-align:center;">
+            <h4 class="text-2xl font-bold mb-4">My Favorites</h4>
+            <div class="slideshow-container" style="position:relative; max-width:600px; margin:auto;">
+        <img class="favorites-slide gallery-rounded clickable-img" src="assets/IMG_5328.JPG" alt="Photo 1" style="display:block;width:100%;">
+        <img class="favorites-slide gallery-rounded clickable-img" src="assets/DSC00104.jpg" alt="Photo 2" style="display:none;width:100%;">
+        <img class="favorites-slide gallery-rounded clickable-img" src="assets/DSC00115.jpg" alt="Photo 3" style="display:none;width:100%;">
+        <img class="favorites-slide gallery-rounded clickable-img" src="assets/DSC00195.jpg" alt="Photo 5" style="display:none;width:100%;">
+        <img class="favorites-slide gallery-rounded clickable-img" src="assets/DSC00510 (1).jpg" alt="Photo 6" style="display:none;width:100%;">
+        <img class="favorites-slide gallery-rounded clickable-img" src="assets/IMG_5322.JPG" alt="Photo 7" style="display:none;width:100%;">
+        <img class="favorites-slide gallery-rounded clickable-img" src="assets/IMG_5320.JPG" alt="Photo 8" style="display:none;width:100%;">
+        <button class="prev" style="position:absolute;top:50%;left:0;transform:translateY(-50%);font-size:2rem;background:rgba(204,25,141,0.7);color:#fff;border:none;padding:8px 16px;cursor:pointer;border-radius:8px;">&#10094;</button>
+        <button class="next" style="position:absolute;top:50%;right:0;transform:translateY(-50%);font-size:2rem;background:rgba(204,25,141,0.7);color:#fff;border:none;padding:8px 16px;cursor:pointer;border-radius:8px;">&#10095;</button>
     </div>
-          </div>
-          <div style="height:40px;"></div>
+    <div style="height:40px;"></div>
 
 <div class="mt-8">
   <h3 class="text-2xl font-bold mb-4">My Photo Gallery</h3>
@@ -236,6 +238,25 @@
 </div>
     </body>
         <script>
+            // Slideshow logic for My Favorites
+            let favIndex = 0;
+            const favSlides = document.querySelectorAll('.favorites-slide');
+            const favPrev = document.querySelector('.slideshow-container .prev');
+            const favNext = document.querySelector('.slideshow-container .next');
+            function showFavSlide(n) {
+                favSlides.forEach((img, i) => img.style.display = (i === n ? 'block' : 'none'));
+            }
+            favPrev.addEventListener('click', function(e) {
+                e.stopPropagation();
+                favIndex = (favIndex - 1 + favSlides.length) % favSlides.length;
+                showFavSlide(favIndex);
+            });
+            favNext.addEventListener('click', function(e) {
+                e.stopPropagation();
+                favIndex = (favIndex + 1) % favSlides.length;
+                showFavSlide(favIndex);
+            });
+            showFavSlide(favIndex);
             // Fullscreen modal logic
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImg');
