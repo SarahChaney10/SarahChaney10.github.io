@@ -40,6 +40,9 @@ $(function () {
     createPlatform(1200, 450, 20, 300, "black")
     createPlatform(1100, 520, 100, 20, "black")
     createPlatform(1020, 650, 100, 20, "black")
+    createPlatform(500, 650, 55, 20, "black")
+    createPlatform(700, 550, 55, 20, "black")
+    createPlatform(500, 650, 55, 20, "black")
 
 
 
